@@ -29,18 +29,9 @@ fun safeCast(i: Any) {
     a?.doStuff()
 }
 
-fun let(s: String?) {
-    //let allows us to call functions that receive non-nullable type with a nullable.
-    //useful specially if we don't own those functions and can't change them
-
-//    ListExampleImpl().addNonNullable(s) // compilation error
-    s?.let { ListExampleImpl().addNonNullable(it) } // let block only executed if s != null
-    //both compile so we need to be careful if null is actually a valid value or not as we'd have in Java
-    ListExampleImpl().add(null)
-    ListExampleImpl().add("a")
-
-
-}
+// Note that we can also use ?.let ?.run ?.also ?.apply on Nullable references,
+//  but not `with`, for `with` requires the instance as argument instead of as receiver.
+// Check Lambdas.kt for examples
 
 /*
 Java may not help kotlin compiler know if params are nullable or not with annotations.

@@ -13,6 +13,10 @@ fun String.toThing() = Thing(this)
 fun createThings() {
     val things = MutableList(0) { Thing("") }
 
+    // package level function in class Clazz. import my.package.showLogin() or import my.package.*
+    // would be required if in another package
+    showLogin()
+
     things.add("one".toThing())
     things.add("another".toThing())
 }

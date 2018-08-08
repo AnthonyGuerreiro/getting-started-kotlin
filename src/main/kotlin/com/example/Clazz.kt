@@ -35,6 +35,7 @@ class Square5(val side: Int) : Shape(side * side) {
     }
 }
 
+// package level function used in ExtensionFunctions.kt for example
 fun showLogin() {
     val login = Login(password = "secret")
     val login2 = login.copy(password = "secret2")
